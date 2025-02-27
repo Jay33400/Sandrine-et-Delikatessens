@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandrine et Delikatenssens - Massages et Bien-être</title>
+    <style>
+        /* Style en pixel art */
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #f8e6d1;
+            color: #5a3d2b;
+            line-height: 1.6;
+            image-rendering: pixelated;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #a3d9a5;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 4px solid #5a3d2b;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #ddb892;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 16px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #5a3d2b;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f8e6d1;
+        }
+
+        /* Conteneur principal */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 40px;
+            background-color: #f8f0e3;
+            padding: 20px;
+            border: 4px solid #ddb892;
+            box-shadow: 8px 8px 0 #5a3d2b;
+        }
+
+        h2 {
+            color: #7b5e40;
+            font-size: 24px;
+            margin-top: 0;
+            border-bottom: 2px dotted #a3d9a5;
+            padding-bottom: 8px;
+        }
+
+        /* Présentation */
+        .presentation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .portrait {
+            flex: 0 0 250px;
+            border: 4px solid #7b5e40;
+            box-shadow: 6px 6px 0 #a3d9a5;
+            overflow: hidden;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .presentation-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* Salon photos */
+        .salon-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .salon-photo {
+            flex: 0 0 calc(50% - 20px);
+            max-width: 400px;
+            border: 4px solid #7b5e40;
+            box-shadow: 6px 6px 0 #a3d9a5;
+            overflow: hidden;
+        }
+
+        .salon-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Cartes de massage */
+        .massage-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .massage-card {
+            background-color: #e5c1a0;
+            padding: 16px;
+            border: 3px solid #7b5e40;
+        }
+
+        .massage-card h3 {
+            color: #5a3d2b;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        /* Forfaits enfants */
+        .kids-packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .package-card {
+            background-color: #a3d9a5;
+            padding: 16px;
+            border: 3px solid #5a3d2b;
+        }
+
+        .package-card h3 {
+            color: #5a3d2b;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #5a3d2b;
+            margin-top: 8px;
+        }
+
+        /* Infos pratiques */
+        .info-card {
+            background-color: #ddb892;
+            padding: 20px;
+            border: 3px solid #7b5e40;
+            text-align: center;
+        }
+
+        /* Section Guidance */
+        .guidance-section {
+            background-color: #d1b9e9;
+            padding: 16px;
+            border: 3px solid #5a3d2b;
+            text-align: center;
+        }
+
+        .guidance-section h3 {
+            color: #5a3d2b;
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        /* Réseaux sociaux */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #5a3d2b;
+            position: relative;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            color: #f8e6d1;
+            text-decoration: none;
+            border: 2px solid #f8e6d1;
+        }
+
+        .social-icon:hover {
+            background-color: #a3d9a5;
+            color: #5a3d2b;
+        }
+
+        .phone {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        } 
+        
+        .email-icon {
+            width: 4%;
+        } 
+
+
+        /* Pied de page */
+        footer {
+            background-color: #5a3d2b;
+            color: #f8e6d1;
+            text-align: center;
+            padding: 16px;
+            font-size: 14px;
+        }
+
+        /* Animation pixel-art */
+        .pixel-flower {
+            width: 40px;
+            height: 40px;
+            background-color: #a3d9a5;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .pixel-flower:before, .pixel-flower:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ddb892;
+        }
+
+        .pixel-flower:before {
+            top: 15px;
+            left: 5px;
+            box-shadow: 
+                10px -10px 0 #f8e6d1,
+                20px 0 0 #f8e6d1,
+                10px 10px 0 #f8e6d1;
+        }
+
+        .pixel-flower:after {
+            top: 15px;
+            left: 15px;
+            background-color: #7b5e40;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .massage-cards, .kids-packages {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 8px 0;
+            }
+            
+            .salon-photo {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sandrine et Delikatenssens</h1>
+        <div class="subtitle">Massages & Bien-être à Gaia, Domaine de l'Happy Culture</div>
+        <div class="pixel-flower"></div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#massages">Massages</a></li>
+            <li><a href="#kids">Ateliers Enfants</a></li>
+            <li><a href="#guidance">Guidance</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="accueil">
+            <h2>Bienvenue chez Sandrine et Delikatenssens</h2>
+            
+            <div class="presentation">
+                <div class="portrait">
+                    <img src="Sandrine.jpg" alt="Portrait de Sandrine" />
+                </div>
+                <div class="presentation-text">
+                    <p>Bienvenue dans mon univers de bien-être et de relaxation. Je suis Sandrine, praticienne en massages bien-être et passionnée par l'accompagnement au mieux-être des personnes de tout âge.</p>
+                    <p>Mon approche personnalisée s'adapte à vos besoins spécifiques, que vous cherchiez à vous détendre, à soulager des tensions ou simplement à prendre un moment pour vous.</p>
+                    <p>Je vous accueille dans un cadre apaisant au Domaine de l'Happy Culture, à Gaia, où calme et sérénité sont au rendez-vous.</p>
+                </div>
+            </div>
+            
+            <h3>Découvrez mon espace</h3>
+            <div class="salon-photos">
+                <div class="salon-photo">
+                    <img src="local.jpg" alt="Salon de massage - Vue 1" style="height: 100%" />
+                </div>
+                <div class="salon-photo">
+                    <img src="local2.jpg" alt="Salon de massage - Vue 2" style="height: 100%;"/>
+                </div>
+            </div>
+        </section>
+
+        <section id="massages">
+            <h2>Nos Massages</h2>
+            <div class="massage-cards">
+                <div class="massage-card">
+                    <h3>Le Californien</h3>
+                    <p>Né en Californie au début des années 1970, ce massage apporte une profonde relaxation et une grande détente de tout le corps. Il stimule efficacement la circulation lymphatique.</p>
+                    <div class="price">1H10 - 70€</div>
+                </div>
+
+                <div class="massage-card">
+                    <h3>Le Pèlerin</h3>
+                    <p>Un massage tonifiant qui apporte une récupération musculaire efficace. Idéal après un effort physique ou pour revitaliser le corps.</p>
+                    <div class="price">1H - 65€</div>
+                </div>
+
+                <div class="massage-card">
+                    <h3>L'Intuitif/Énergétique</h3>
+                    <p>Un massage personnalisé selon vos besoins et mes ressentis. Une expérience unique adaptée à votre état physique et émotionnel du moment.</p>
+                    <div class="price">1H10 - 80€</div>
+                </div>
+
+                <div class="massage-card">
+                    <h3>Massage Dos/Jambes</h3>
+                    <p>Ciblant les zones de tension, ce massage soulage les douleurs dorsales et améliore la circulation dans les jambes pour une sensation de légèreté.</p>
+                    <div class="price">45 min - 50€</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kids">
+            <h2>Ateliers pour Enfants</h2>
+            <div class="kids-packages">
+                <div class="package-card">
+                    <h3>Forfait Atelier et Massage</h3>
+                    <p>Offrez à votre enfant une expérience unique qui combine détente et sérénité. Cet atelier est conçu pour éveiller les sens et apaiser le corps et l'esprit. Grâce à des techniques douces et adaptées aux plus jeunes, le massage relaxant permet de relâcher les tensions et d'encourager un bien-être profond.</p>
+                    <p>Un cadeau parfait pour nourrir l'équilibre et la tranquillité de votre enfant.</p>
+                    <div class="price">1h30 - 55€</div>
+                </div>
+
+                <div class="package-card">
+                    <h3>Le Massage</h3>
+                    <p>40 minutes de relaxation totale. Un instant suspendu, conçu selon ses besoins. Idéal pour se préparer à un examen, une compétition, ou juste pour faire comme les adultes.</p>
+                    <div class="price">40min - 40€</div>
+                </div>
+
+                <div class="package-card">
+                    <h3>L'Atelier Bien-être</h3>
+                    <p>Avec des outils ludiques, je propose un atelier d'une heure, interactif et relaxant, pour aider votre enfant à créer sa propre "boîte à pharmacie du bien-être". Cet atelier lui permettra d'explorer diverses techniques de relaxation et de les intégrer comme une routine dans son quotidien.</p>
+                    <div class="price">1h - 35€</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guidance">
+            <h2>Guidance</h2>
+            <div class="guidance-section">
+                <h3>Tirage d'Oracles en Distanciel</h3>
+                <p>Laissez-vous guider par les oracles pour éclairer votre chemin et vous connecter à votre intuition. Je vous propose des séances de tirage personnalisées en distanciel pour répondre à vos questions et vous accompagner dans vos réflexions.</p>
+                <div class="price">25€</div>
+                <div class="pixel-flower"></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Informations Pratiques</h2>
+            <div class="info-card">
+                <p>Adresse:<strong>Gaia, Domaine de l'Happy Culture</strong><br>767 route du Bernes<br>33440 Castelnau d'Auzan Labarrere</p>
+                <p>Pour toute question ou commande, n'hésitez pas à nous contacter :</p>
+                <div class="phone">
+                    <p>📞 Téléphone: 07 62 68 85 09</p>
+                </div>
+
+                <div class="contact-section" id="contact">                                    
+                    <p class="email-container">
+                      <img src="e-mail.png" alt="Email" class="email-icon">
+                      <a href="mailto:sandrineetdelikatess@gmail.com" class="email-link">sandrine@delikatessens.com</a>
+                    </p>
+                  </div>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/sandrineetdelikatenssens" class="social-icon" target="_https://www.instagram.com/sandrineetdelikatess32/?igsh=MWJ3bGZrMmQzbWpjag%3D%3D">IG</a>
+                    <a href="https://www.facebook.com/sandrineetdelikatenssens" class="social-icon" target="_https://www.facebook.com/people/DELIKATESSENS/61557727233990/">FB</a>
+                </div>
+                
+                <p><strong>Pour prendre rendez-vous ou obtenir plus d'informations,</strong><br>n'hésitez pas à nous contacter.</p>
+                <div class="pixel-flower"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sandrine et Delikatenssens - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
